@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#090910">
+<title>For Jelita Ajeng Ayu ✦</title>
+<style>
+:root{--bg:#090910;--pink:#ff8db8;--lav:#b9a6ff;--muted:#aaa5b8;--white:#f8f4fb}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:radial-gradient(ellipse at 50% 0%,#24182b 0%,#0b0a12 45%,#07070c 100%);color:var(--white);font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,sans-serif;min-height:100vh;overflow-x:hidden}
+#stars{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:0;opacity:.8}
+main{position:relative;z-index:1;width:min(920px,92%);margin:auto;padding:42px 0 70px}
+.eyebrow{font-size:.72rem;letter-spacing:.28em;text-transform:uppercase;color:#c7b9d8}
+.hero{text-align:center;min-height:78vh;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.orbit{width:112px;height:112px;border:1px solid #ffffff24;border-radius:50%;display:grid;place-items:center;margin-bottom:25px;position:relative;box-shadow:0 0 55px #d68ab522}
+.orbit:before,.orbit:after{content:"";position:absolute;border:1px solid #ff9bc455;border-radius:50%;inset:-12px;transform:rotate(-28deg) scaleY(.42)}
+.orbit:after{inset:-23px;transform:rotate(35deg) scaleY(.35);border-color:#b9a6ff55}
+.heart{font-size:2.5rem;filter:drop-shadow(0 0 18px #ff82b8)}
+h1{font-size:clamp(2.3rem,8vw,5rem);line-height:1.02;letter-spacing:-.06em;margin:0 0 14px;font-weight:800}
+h1 span{background:linear-gradient(100deg,#fff,#ffc0d8 45%,#bdaeff);-webkit-background-clip:text;background-clip:text;color:transparent}
+.subtitle{color:#c5bdce;max-width:540px;line-height:1.7;margin:0 auto 32px}
+.count-wrap{width:min(650px,100%);padding:22px;border:1px solid #ffffff19;background:#ffffff08;backdrop-filter:blur(14px);border-radius:24px;box-shadow:0 18px 70px #0007}
+.countdown{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.time{padding:16px 5px;border-radius:17px;background:linear-gradient(145deg,#ffffff10,#ffffff04);border:1px solid #ffffff12}
+.num{font-size:clamp(1.8rem,6vw,3rem);font-weight:750;letter-spacing:-.05em;font-variant-numeric:tabular-nums}
+.unit{font-size:.68rem;letter-spacing:.17em;text-transform:uppercase;color:#b9afc3;margin-top:4px}
+.date-note{font-size:.8rem;color:#b9aebf;margin-top:16px}
+.scroll{margin-top:26px;color:#bfb3ca;font-size:.8rem;animation:bob 2s infinite}
+@keyframes bob{50%{transform:translateY(7px);opacity:.65}}
+.section{margin:55px 0}
+.section-head{text-align:center;margin-bottom:24px}
+.section-head h2{font-size:clamp(1.6rem,5vw,2.4rem);letter-spacing:-.04em;margin:8px 0}
+.section-head p{color:var(--muted);font-size:.9rem}
+.gallery{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px}
+.media{overflow:hidden;border-radius:20px;background:#17131e;border:1px solid #ffffff18;box-shadow:0 12px 35px #0005}
+.media img{width:100%;height:100%;display:block;object-fit:cover;transition:transform .6s}
+.media:hover img{transform:scale(1.035)}
+.media.tall{aspect-ratio:4/5}.media.wide{grid-column:1/-1;aspect-ratio:16/9}
+.media video{width:100%;height:100%;display:block;object-fit:cover;background:#08080d}
+.letter{padding:clamp(23px,5vw,42px);border-radius:25px;border:1px solid #ffffff20;background:linear-gradient(145deg,#211827dd,#11101add);box-shadow:0 20px 70px #0006;line-height:1.9;color:#eee6f1;font-size:1rem}
+.letter p{margin:0 0 16px}.letter p:last-child{margin-bottom:0}
+.signature{color:#ffb1ce;font-weight:700}
+#surprise{display:none;animation:appear 1.1s ease both}
+#surprise.show{display:block}
+@keyframes appear{from{opacity:0;transform:translateY(24px) scale(.985)}to{opacity:1;transform:none}}
+.hidden-before{display:none}
+footer{text-align:center;color:#777184;font-size:.75rem;margin-top:65px}
+.spark{position:fixed;pointer-events:none;z-index:4;font-size:18px;animation:floatUp 2.5s ease-out forwards}
+@keyframes floatUp{to{transform:translateY(-120px) rotate(25deg);opacity:0}}
+@media(max-width:560px){main{padding-top:24px}.hero{min-height:83vh}.count-wrap{padding:13px}.countdown{gap:6px}.time{padding:13px 2px}.unit{font-size:.58rem}.gallery{gap:9px}.media{border-radius:15px}.section{margin:42px 0}}
+</style>
+</head>
+<body>
+<canvas id="stars"></canvas>
+<main>
+<section class="hero" id="top">
+  <div class="orbit"><div class="heart">♡</div></div>
+  <div class="eyebrow">a little countdown for</div>
+  <h1><span>Jelita</span><br>Ajeng Ayu</h1>
+  <p class="subtitle">Ada satu hari yang pengin aku sambut bareng kamu. Sabar dikit yaa, Nonaaa. 🌙</p>
+  <div class="count-wrap">
+    <div class="countdown" aria-live="polite">
+      <div class="time"><div class="num" id="days">00</div><div class="unit">Hari</div></div>
+      <div class="time"><div class="num" id="hours">00</div><div class="unit">Jam</div></div>
+      <div class="time"><div class="num" id="minutes">00</div><div class="unit">Menit</div></div>
+      <div class="time"><div class="num" id="seconds">00</div><div class="unit">Detik</div></div>
+    </div>
+    <div class="date-note">19 NOVEMBER 2026 · 00:00 WIB</div>
+  </div>
+  <div class="scroll">scroll pelan-pelan ↓</div>
+</section>
+
+<section class="section">
+  <div class="section-head">
+    <div class="eyebrow">little pieces of us</div>
+    <h2>Some memories ✦</h2>
+    <p>Disimpan baik-baik, biar nggak cuma lewat di galeri.</p>
+  </div>
+  <div class="gallery">
+    <div class="media tall"><img src="assets/jeje-01.jpg" alt="Foto Jeje"></div>
+    <div class="media tall"><img src="assets/jeje-02.png" alt="Foto Jeje"></div>
+    <div class="media wide"><img src="assets/memory-game-01.png" alt="Kenangan bermain bersama"></div>
+    <div class="media wide"><img src="assets/memory-game-02.jpg" alt="Kenangan bermain bersama"></div>
+    <div class="media wide"><img src="assets/jeje-05.jpg" alt="Kolase foto Jeje"></div>
+    <div class="media wide"><video controls playsinline preload="metadata"><source src="assets/memory-video.mp4" type="video/mp4">Browser kamu tidak mendukung video.</video></div>
+  </div>
+</section>
+
+<section class="section" id="surprise">
+  <div class="section-head">
+    <div class="eyebrow">00:00 — it's your day</div>
+    <h2>HAPPYY BIRTHDAYYY!! 🎂💗</h2>
+    <p>Untuk manusia yang satu ini. IYAA, KAMU. 🫵🏻</p>
+  </div>
+  <article class="letter">
+    <p>HAPPYY BIRTHDAYY, THIS IS YOUR SPECIAL DAYYY MY JELITAAA AJENGG AYUU SEGALAKU DUNIAKUUU BIDADARIKUUUUU!!! 😭💗💗🎂🎀✨</p>
+    <p>Selamat bertambah umur yaaa, Jejeee. Semoga di umur yang baru ini kamu makin banyak ketemu hal-hal baik, makin sering bahagia, sehat terus, dimudahkan semua urusannya, dan apa pun yang lagi kamu perjuangin pelan-pelan bisa tercapai. AAMIINNN PALING KENCENGG 🤲🏻💗</p>
+    <p>Makasiii udah nemenin aku sampai sejauh ini. Makasiii udah mau dengerin cerita-cerita randomku, ngadepin kelakuanku yang kadang absurd, lawakanku yang kadang perlu evaluasi nasional, dan segala versi diriku yang nggak selalu rapi wkwkwk 😭</p>
+    <p>Walaupun sekarang kondisiku lagi begini, masih di pondok, kadang susah punya waktu dan nggak bisa selalu ada setiap saat, aku tetap bersyukur banget punya kamu. Jarak, jadwal, dan keadaan kadang bikin semuanya nggak gampang, tapi bukan berarti kamu jadi kurang berarti. Kamu tetap jadi salah satu bagian paling berharga di hari-hariku. 🥹</p>
+    <p>Aku nggak janji semuanya bakal selalu mulus. Tapi aku pengin terus belajar jadi orang yang lebih baik, lebih ngerti kamu, dan nggak cuma jago bilang kangen doang—walaupun stok kangennya kayaknya nggak ada batas kuota. 📶😭</p>
+    <p>Pokoknya, jangan ngerasa sendirian yaa. Kamu udah berusaha sejauh ini, dan aku bangga sama kamu. Semoga tahun ini lebih ramah sama kamu. Semoga hal-hal yang bikin kamu capek diganti sama banyak alasan buat senyum. Jangan lupa makan, istirahat, dan jangan kebanyakan mikir sampai otaknya lembur tanpa gaji. 😤💞</p>
+    <p>Once again, happy birthday, Jelitaaa. Tetap jadi Jeje yang aku kenal—yang lucu, tengil, kadang bikin gemes, tapi selalu punya tempat spesial di hidupku. I LOVE YOUUUU, MY JELITAAA!! 💗💗💗🫶🏻🌷🎀🌙</p>
+    <p class="signature">— dari aku, yang selalu dukung kamu. ❤️</p>
+  </article>
+  <div style="text-align:center;margin-top:22px;color:#c5b5ce">ps: kado digital dulu yaa, yang asli menyusul kalau semesta dan jadwal pondok mengizinkan 😭🎁</div>
+</section>
+
+<footer>made with love, a little chaos, and too many heart emojis ♡</footer>
+</main>
+<script>
+const target = new Date("2026-11-19T00:00:00+07:00").getTime();
+const ids = ["days","hours","minutes","seconds"];
+const surprise = document.getElementById("surprise");
+let opened = false;
+function reveal(){
+  if(opened) return;
+  opened = true;
+  surprise.classList.add("show");
+  surprise.scrollIntoView({behavior:"smooth",block:"start"});
+  for(let i=0;i<26;i++) setTimeout(()=>heartBurst(),i*90);
+}
+function tick(){
+  let diff = target - Date.now();
+  if(diff <= 0){
+    ids.forEach(id=>document.getElementById(id).textContent="00");
+    reveal(); return;
+  }
+  const vals=[Math.floor(diff/86400000),Math.floor(diff%86400000/3600000),Math.floor(diff%3600000/60000),Math.floor(diff%60000/1000)];
+  ids.forEach((id,i)=>document.getElementById(id).textContent=String(vals[i]).padStart(2,"0"));
+}
+function heartBurst(){
+  const el=document.createElement("div");el.className="spark";
+  el.textContent=["💗","✨","🌷","💖","🫶🏻"][Math.floor(Math.random()*5)];
+  el.style.left=(Math.random()*94+3)+"vw";el.style.top=(Math.random()*75+15)+"vh";
+  document.body.appendChild(el);setTimeout(()=>el.remove(),2600);
+}
+tick();setInterval(tick,250);
+if(Date.now()>=target) reveal();
+
+const canvas=document.getElementById("stars"),ctx=canvas.getContext("2d");
+let stars=[];
+function resize(){canvas.width=innerWidth*devicePixelRatio;canvas.height=innerHeight*devicePixelRatio;ctx.setTransform(devicePixelRatio,0,0,devicePixelRatio,0,0);stars=Array.from({length:Math.min(150,Math.floor(innerWidth/5))},()=>({x:Math.random()*innerWidth,y:Math.random()*innerHeight,r:Math.random()*1.35+.2,a:Math.random(),s:Math.random()*.012+.002}));}
+function draw(){ctx.clearRect(0,0,innerWidth,innerHeight);stars.forEach(s=>{s.a+=s.s;if(s.a>1||s.a<.15)s.s*=-1;ctx.fillStyle=`rgba(255,225,242,${Math.max(.1,s.a)})`;ctx.beginPath();ctx.arc(s.x,s.y,s.r,0,Math.PI*2);ctx.fill();});requestAnimationFrame(draw);}
+addEventListener("resize",resize);resize();draw();
+</script>
+</body>
+</html>
